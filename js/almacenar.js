@@ -20,6 +20,24 @@ function cargarLista(){
     }
 }
 
+function agregarItem() { 
+    let nuevoItem = inputItem.value.trim();
+    if (nuevoItem){
+        let lista = JSON.parse(localStorage.getItem('listaId')) || [];
+        lista.push(nuevoItem);    
+        localStorage.setItem('listaId', JSON.stringify(lista));   
+ 
+        const li = document.createElement('li');
+        li.textContent = nuevoItem;
+        listaContenedor.appendChild(li);
+        inputItem.value = '';
+
+
+    }
+}
+console.log(agregarItem());
+
+
 /* esto es para eliminar un elemento*/
 function eliminarItem(){
     localStorage.setItem('listaId', JSON.stringify([]));
@@ -35,4 +53,5 @@ btnLimpiar.addEventListener('click', eliminarItem);
 
 //Carga la lista al iniciar la página
 cargarLista();
+
 
