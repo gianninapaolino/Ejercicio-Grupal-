@@ -14,3 +14,4 @@ btnLimpiar.addEventListener('click', eliminarItem);
 //Carga la lista al iniciar la página
 cargarLista();
 
+
